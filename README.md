@@ -48,6 +48,8 @@ npm install -g @angular/cli
 
 End with an example of getting some data out of the system or using it for a little demo
 
+![Snapshot of the working project](/src/assets/hero-module-material.gif)
+
 ## Running the tests
 
 Karma for browser errors reports and protractor *e2e* for testing purposes.
