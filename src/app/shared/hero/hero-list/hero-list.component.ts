@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, AfterViewInit } from '@angular/core';
 import { MatSort, MatTableDataSource, MatPaginator } from '@angular/material';
+import { MatDialog } from '@angular/material';
 import { HeroService } from '../services/hero.service';
-import { Hero } from '../services/hero.model';
 
 @Component({
   selector: 'app-hero-list',
@@ -11,19 +11,32 @@ import { Hero } from '../services/hero.model';
 export class HeroListComponent implements OnInit, AfterViewInit {
 
   public objectChild;
-  public pageSize: Array<Number> =  [3, 5, 8];
+  private dialogRef: any;
+  public pageSize: Array<Number> =  [3, 8, 16];
   public dataChild: [{}];
   public displayedColumns: string[] = ['id', 'name', 'alterEgo', 'likes', 'default'];
   public data;
   public length;
-  public dataSource: MatTableDataSource<{} | {}[] | Hero[]>;
+  public itensPerPage;
+  public dataSource: MatTableDataSource<any>;
 
   // @Input() dataAcessor: Hero[];
   // @Output() dataSender = new EventEmitter();
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private heroService: HeroService) {
+  constructor(private heroService: HeroService, public dialog: MatDialog) {
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialogRef.open(HeroListComponent, {
+      width: '1250px',
+      data: this.dataSource.data
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 
   /* public getDataAcessor(): Hero[] {
@@ -34,21 +47,21 @@ export class HeroListComponent implements OnInit, AfterViewInit {
     this.objectChild = [
       {
         id: 1,
-        name: 'nameOne',
-        lastName: 'lastNameOne',
+        name: 'eduard',
+        lastName: 'phenix',
         role: 'manager'
       },
       {
         id: 2,
-        name: 'nametwo',
-        lastName: 'lastNameTwo',
+        name: 'gustav',
+        lastName: 'leopard',
         role: 'manager'
       }
     ];
     return this.dataChild = this.objectChild;
   }
 
-  public get childDataQuery(): Hero[] {
+  public get childDataQuery() {
     return this.dataChildObj;
   }
 

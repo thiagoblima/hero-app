@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { routing } from './app.routing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
+import { MatButtonModule } from '@angular/material';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { SharedModule } from './shared/shared.module';
   ],
   imports: [
     SharedModule,
+    MatButtonModule,
     RouterModule.forRoot([]),
     RouterModule,
     BrowserModule,
@@ -21,6 +23,7 @@ import { SharedModule } from './shared/shared.module';
     HttpClientModule,
     routing,
   ],
+  schemas: [NO_ERRORS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
