@@ -1,13 +1,17 @@
-<header>
-    <hgroup>
-        <h1> {{pageTitle}}</h1>
-        <h4> Please, select a route and test the injected module</h4>
-    </hgroup>
-</header>
+<section class="container">
 
+    <header class="col-md-12">
+        <hgroup>
+            <h1> {{pageTitle}}</h1>
+            <h4> Please, select a route and test the injected module</h4>
+        </hgroup>
+    </header>
 
-<button mat-raised-button routerLink="/" color="primary">App Module (Hero Module Injected)</button>
-<button mat-raised-button routerLink="/hero" color="primary">Hero Module (Shared Module)</button>
-<button mat-raised-button routerLink="/admin" color="primary">Admin Module (Hero Module Injected)</button>
-
-<router-outlet></router-outlet>
+    <nav class="col-md-12">
+        <button mat-raised-button routerLink="/" color="primary">App Module (Hero Module Injected)</button>
+        <button mat-raised-button routerLink="/hero" color="primary">Hero Module (Shared Module)</button>
+        <button mat-raised-button routerLink="/admin" color="primary">Admin Module (Hero Module Injected)</button>
+    </nav>
+    
+    <router-outlet></router-outlet>
+</section>
