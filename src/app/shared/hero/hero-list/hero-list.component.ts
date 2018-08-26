@@ -28,17 +28,6 @@ export class HeroListComponent implements OnInit, AfterViewInit {
   constructor(private heroService: HeroService, public dialog: MatDialog) {
   }
 
-  openDialog(): void {
-    const dialogRef = this.dialogRef.open(HeroListComponent, {
-      width: '1250px',
-      data: this.dataSource.data
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
-  }
-
   /* public getDataAcessor(): Hero[] {
     return this.dataAcessor;
   } */
