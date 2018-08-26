@@ -6,8 +6,6 @@ import { RouterModule } from '@angular/router';
 import { routing } from './app.routing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
-import { HeroListComponent } from './shared/hero/hero-list/hero-list.component';
-import { MAT_DIALOG_DATA } from '@angular/material';
 
 
 @NgModule({
@@ -15,6 +13,7 @@ import { MAT_DIALOG_DATA } from '@angular/material';
     AppComponent
   ],
   imports: [
+    SharedModule,
     RouterModule.forRoot([]),
     RouterModule,
     BrowserModule,
