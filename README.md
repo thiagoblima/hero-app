@@ -48,7 +48,7 @@ npm install -g @angular/cli
 
 End with an example of getting some data out of the system or using it for a little demo
 
-* For a better visualization please, click on the gif bellow.
+* For better visualization please, *click* on the gif bellow.
 
 ![Snapshot of the working project](/src/assets/hero-module-material.gif)
 
