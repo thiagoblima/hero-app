@@ -48,59 +48,20 @@ npm install -g @angular/cli
 
 End with an example of getting some data out of the system or using it for a little demo
 
-## Adding a new note
-
-```
-node app.js add --title="title" --body="body"
-```
-
-## Listing all notes
-
-```
-node app list
-```
-
-or
-
-```
-npm run list-notes
-``` 
-## Removing note
-
-arguments: --title=<title-id>
-
-accepts string or `\` to handle linux spacing interface.
-
-linux bash example:
-
-```
-node app.js remove --title=to\ buy
-Note was removed
-```
-
-string based example:
-
-```
-node app.js remove --title="to buy"
-Note was removed
-```
-
-## Get note byId 
-
-arguments: --title=<title-id>
-
-```
-node app.js read --title=My\ First\ Note
-Note found
---
-Title: My First Note
-Body: This is my first note
-``` 
-
-
 ## Running the tests
 
 Karma for browser errors reports and protractor *e2e* for testing purposes.
+
+* Test *npm alias* 
+```
+npm run test
+```
+
+* Linter *npm alias*
+
+```
+npm run lint
+```
 
 ### Break down into end to end tests
 
