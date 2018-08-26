@@ -53,6 +53,7 @@ End with an example of getting some data out of the system or using it for a lit
 Karma for browser errors reports and protractor *e2e* for testing purposes.
 
 * Test *npm alias* 
+
 ```
 npm run test
 ```
