@@ -47,14 +47,14 @@ export class HeroListComponent implements OnInit, AfterViewInit {
     this.objectChild = [
       {
         id: 1,
-        name: 'eduard',
-        lastName: 'phenix',
+        name: 'john',
+        lastName: 'phoenix',
         role: 'manager'
       },
       {
         id: 2,
-        name: 'gustav',
-        lastName: 'leopard',
+        name: 'gilbert',
+        lastName: 'simmons',
         role: 'manager'
       }
     ];
