@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter, ViewChild, AfterViewIni
 import { MatSort, MatTableDataSource, MatPaginator } from '@angular/material';
 import { MatDialog } from '@angular/material';
 import { HeroService } from '../services/hero.service';
+import { Hero } from '../services/hero.model';
 
 @Component({
   selector: 'app-hero-list',
@@ -20,31 +21,27 @@ export class HeroListComponent implements OnInit, AfterViewInit {
   public itensPerPage;
   public dataSource: MatTableDataSource<any>;
 
-  // @Input() dataAcessor: Hero[];
-  // @Output() dataSender = new EventEmitter();
+  @Input() dataAcessor: Hero[];
+  @Output() dataSender = new EventEmitter();
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
   constructor(private heroService: HeroService, public dialog: MatDialog) {
   }
 
-  /* public getDataAcessor(): Hero[] {
+   public getDataAcessor(): Hero[] {
     return this.dataAcessor;
-  } */
+  }
 
   private get dataChildObj() {
     this.objectChild = [
       {
-        id: 1,
-        name: 'john',
-        lastName: 'phoenix',
-        role: 'manager'
+        name: 'angular',
+        version: '6'
       },
       {
-        id: 2,
-        name: 'gilbert',
-        lastName: 'simmons',
-        role: 'manager'
+        name: 'material',
+        version: '6'
       }
     ];
     return this.dataChild = this.objectChild;
@@ -72,7 +69,7 @@ export class HeroListComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    // this.dataSender.emit(this.childDataQuery);
+    this.dataSender.emit(this.childDataQuery);
     console.log(this.childDataQuery);
   }
 

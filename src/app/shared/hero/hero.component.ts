@@ -1,6 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { Hero } from '../../shared/hero/services/hero.model';
-import { HeroService } from '../../shared/hero/services/hero.service';
 import { MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { HeroListComponent } from './hero-list/hero-list.component';
 
@@ -10,13 +9,13 @@ import { HeroListComponent } from './hero-list/hero-list.component';
   styleUrls: ['./hero.component.scss']
 })
 export class HeroComponent implements OnInit {
-
+  dataAcessor;
   private dataTest;
   private object;
   private dataChild: [{}];
   heroes: Hero[] = null;
 
-  constructor(private heroService: HeroService, public dialog: MatDialog,
+  constructor(public dialog: MatDialog,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
     openDialog(): void {

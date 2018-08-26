@@ -1,14 +1,14 @@
-<!-- <app-hero
+ <!--<app-hero-list
    [dataAcessor]="heroes" 
    (dataSender)="dataReceiver($event)">
-</app-hero> -->
+</app-hero-list>-->
 
 
-<!-- <ul *ngFor="let element of dataChild">
+ <ul *ngFor="let element of dataChild">
    <li>
        {{ element.id }} - {{ element.lastName }}, {{ element.name }}.
    </li>
-</ul>-->
+</ul>
 
 <section class="col-md-12">
     <button (click)="openDialog()" mat-button color="primary">Open MatDialog By Module Injection</button>
