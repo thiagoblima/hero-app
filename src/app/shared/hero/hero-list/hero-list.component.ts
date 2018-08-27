@@ -1,3 +1,11 @@
+/**
+ * @author: <thiagolimasp@live.com> Thiago Lima
+ * @class: HeroComponentList
+ * @description: Hero component data source
+ * @constructor: { HeroService, MatDialog }
+ */
+
+
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, AfterViewInit } from '@angular/core';
 import { MatSort, MatTableDataSource, MatPaginator } from '@angular/material';
 import { MatDialog } from '@angular/material';
@@ -70,8 +78,6 @@ export class HeroListComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.dataSender.emit(this.childDataQuery);
-    console.log(this.childDataQuery);
-    console.log(this.dataAcessor);
   }
 
 }
