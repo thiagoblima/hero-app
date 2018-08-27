@@ -34,7 +34,6 @@ export class HeroListComponent implements OnInit, AfterViewInit {
   public pageSize: Array<Number> =  [3, 8, 16];
   public dataChild: [{}];
   public displayedColumns: string[] = ['id', 'name', 'alterEgo', 'likes', 'default'];
-  public data;
   public length;
   public itensPerPage;
   public dataSource: MatTableDataSource<any>;
