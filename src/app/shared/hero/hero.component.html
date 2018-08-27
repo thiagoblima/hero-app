@@ -1,14 +1,20 @@
- <!--<app-hero-list
+<!-- 
+  Activating communication between Top and Children class,
+  Remove this comments for using @Input and @Output data binding.   
+
+  <app-hero-list
    [dataAcessor]="heroes" 
    (dataSender)="dataReceiver($event)">
-</app-hero-list>-->
+</app-hero-list> 
 
 
  <ul *ngFor="let element of dataChild">
    <li>
-       {{ element.id }} - {{ element.lastName }}, {{ element.name }}.
+      {{ element.name }}, {{ element.version }}.
    </li>
 </ul>
+
+-->
 
 <section class="col-md-12">
     <button (click)="openDialog()" mat-button color="primary">Open MatDialog By Module Injection</button>

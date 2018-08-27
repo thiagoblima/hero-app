@@ -1,5 +1,13 @@
+/**
+ * @author: <thiagolimasp@live.com> Thiago Lima
+ * @class: HeroComponent
+ * @description: Hero component list wrapper
+ * @constructor: { HeroService, MatDialog }
+ */
+
 import { Component, OnInit, Inject } from '@angular/core';
 import { Hero } from '../../shared/hero/services/hero.model';
+import { HeroService } from '../../shared/hero/services/hero.service';
 import { MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { HeroListComponent } from './hero-list/hero-list.component';
 
@@ -9,13 +17,11 @@ import { HeroListComponent } from './hero-list/hero-list.component';
   styleUrls: ['./hero.component.scss']
 })
 export class HeroComponent implements OnInit {
-  dataAcessor;
-  private dataTest;
-  private object;
+
   private dataChild: [{}];
   heroes: Hero[] = null;
 
-  constructor(public dialog: MatDialog,
+  constructor(private heroService: HeroService, public dialog: MatDialog,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
     openDialog(): void {
@@ -28,25 +34,18 @@ export class HeroComponent implements OnInit {
       });
     }
 
-  private get value() {
-    this.object = {
-      id: 1,
-      name: 'Thiago',
-      last_name: 'Lima'
-    };
-    return this.dataTest = this.object;
-  }
-
-  public getValue(): {} {
-    return this.value;
-  }
-
   dataReceiver(ev) {
     this.dataChild = ev;
   }
 
   ngOnInit() {
+     /* TESING PURPOSES - refers to @Input dataAcessor
+        @class HeroListComponent makes this call for you!
 
+      this.heroService.getHeroes().subscribe((heroes) => {
+      this.heroes = heroes;
+    });
+    */
   }
 
 }

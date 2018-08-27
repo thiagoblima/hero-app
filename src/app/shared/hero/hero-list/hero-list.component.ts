@@ -71,6 +71,7 @@ export class HeroListComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.dataSender.emit(this.childDataQuery);
     console.log(this.childDataQuery);
+    console.log(this.dataAcessor);
   }
 
 }
