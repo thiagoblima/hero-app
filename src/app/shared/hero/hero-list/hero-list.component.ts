@@ -20,7 +20,6 @@ import { Hero } from '../services/hero.model';
 export class HeroListComponent implements OnInit, AfterViewInit {
 
   public objectChild;
-  private dialogRef: any;
   public pageSize: Array<Number> =  [3, 8, 16];
   public dataChild: [{}];
   public displayedColumns: string[] = ['id', 'name', 'alterEgo', 'likes', 'default'];
