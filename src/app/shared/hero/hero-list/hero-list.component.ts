@@ -19,6 +19,17 @@ import { Hero } from '../services/hero.model';
 })
 export class HeroListComponent implements OnInit, AfterViewInit {
 
+  /*
+     Testing purposes
+     You definitely don't need to work with @Input and @Output here
+     I'll leave it commented out because @class: HeroListComponent is
+     fully responsible for consuming HeroService and provide it to the
+     wrapper @class: HeroComponent
+  */
+
+ @Input() dataAcessor: Hero[];
+ @Output() dataSender = new EventEmitter();
+
   public objectChild;
   public pageSize: Array<Number> =  [3, 8, 16];
   public dataChild: [{}];
@@ -28,8 +39,6 @@ export class HeroListComponent implements OnInit, AfterViewInit {
   public itensPerPage;
   public dataSource: MatTableDataSource<any>;
 
-  @Input() dataAcessor: Hero[];
-  @Output() dataSender = new EventEmitter();
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
